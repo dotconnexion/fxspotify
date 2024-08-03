@@ -1,2 +1,2 @@
-# fxspotify
-Fix Spotify embeds.
+# FxSpotify version 2
+[FxSpotify](https://fxspotify.com/) is being developed from scratch using [Astro](https://astro.build/) as the base framework. The previous framework, [Nuxt](https://nuxt.com/), despite being comfortable with it, is very limited when it comes to the back-end. It's not that it's bad, it's just not a tool for small projects like FxSpotify. There's not much more to add other than FxSpotify on Nuxt is currently stable, but I'm going to start moving its functionality to Astro, leaving it open source in this repository.
