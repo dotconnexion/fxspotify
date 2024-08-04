@@ -2,6 +2,7 @@
   "name": "fxspotify",
   "type": "module",
   "version": "2.0.0",
+  "license": "MIT",
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
@@ -9,6 +10,7 @@
     "preview": "astro preview",
     "astro": "astro"
   },
+  "homepage": "https://github.com/dotconnexion/fxspotify#readme",
   "dependencies": {
     "astro": "^4.13.1",
     "@astrojs/check": "^0.9.1",

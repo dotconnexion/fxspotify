@@ -13,7 +13,7 @@ for (var i = 0; i < song.artists.length; i++) {
 	<html lang="en" style="width: 100%; height: 100%;">
    	<head>
          <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
-         <meta http-equiv="refr!esh" content={`${isBot ? '2' : '0'};url=${song.external_urls.spotify}`}>
+         <meta http-equiv="refresh" content={`${isBot ? '2' : '0'};url=${song.external_urls.spotify}`}>
          <link rel="dns-prefetch" href="//api.spotify.com">
          <link rel="preconnect" href="https://api.spotify.com" crossorigin>
          <link rel="alternate" type="application/json+oembed" href={`${Astro.url.origin}/oembed.json?id=${id}`} />
@@ -45,9 +45,7 @@ for (var i = 0; i < song.artists.length; i++) {
          <meta property="twitter:title" content={song.name} />
          <meta property="twitter:url" content="https://open.spotify.com/track/${slug}?utm_source=fxspotify" />
       </head>
-      <body style="display: flex; width: 100%; height: 100%; margin: 0; font-family: sans-serif">
-	      <slot />
-      </body>
+      <body style="display: flex; width: 100%; height: 100%; margin: 0; font-family: sans-serif"></body>
 </html>
 
 <style is:global>

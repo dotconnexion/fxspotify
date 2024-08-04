@@ -1,13 +1,10 @@
 import type { APIContext } from 'astro';
 
 export async function GET(Astro: APIContext) {
-  // Access query parameters (if any) from the Astro object
-  const { searchParams } = Astro.url;
+   const { searchParams } = Astro.url;
 
-  const response = await fetch(Astro.url.origin + `/api/track/${searchParams.get('id')}`);
-  const song = await response.json();
-
-  console.log(song);
+   const response = await fetch(Astro.url.origin + `/api/track/${searchParams.get('id')}`);
+   const song = await response.json();
 
    let artists = [];
    for (var i = 0; i < song.artists.length; i++) {

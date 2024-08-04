@@ -7,8 +7,6 @@ const response = await fetch(`${Astro.url.origin}/api/track/${params.id}`).catch
 const data = await response.json().catch(error => error);
 const useragent = Astro.request.headers.get("user-agent");
 
-console.log(data);
-
 const seoBots = [
    'Googlebot',        // Googlebot
    'bingbot',          // Bingbot

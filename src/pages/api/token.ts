@@ -1,4 +1,4 @@
-import { ACCESS_TOKEN, ACCESS_TOKEN_EXPIRE, ACCESS_TOKEN_NOW, setAccessToken } from "../../config";
+import { ACCESS_TOKEN, ACCESS_TOKEN_EXPIRE, ACCESS_TOKEN_NOW, setAccessToken, toggleFetchingToken } from "../../config";
 
 export async function GET({ params, redirect }) {
    var details: any = {
@@ -24,6 +24,8 @@ export async function GET({ params, redirect }) {
       value: response.access_token,
       expires_in: response.expires_in
    });
+
+   toggleFetchingToken();
 
    return new Response(JSON.stringify({
       status: 200,
