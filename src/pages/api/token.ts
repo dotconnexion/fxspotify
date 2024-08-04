@@ -31,4 +31,4 @@ export async function GET({ params, redirect }) {
       status: 200,
       code: 'CODE_UPDATED'
    }));
- }
+}

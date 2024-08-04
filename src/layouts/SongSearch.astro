@@ -2,15 +2,30 @@
 const id = Astro.params.id;
 const song = Astro.props.song;
 const isBot = Astro.props.isBot;
+const isError = Astro.props.isError;
 
 let artists = [];
-   
-for (var i = 0; i < song.artists.length; i++) {
-   artists.push(`${i === 0 ? '' : i+1 === song.artists.length ? ' and ' : ', '}${song.artists[i].name}`);
+
+if (!isError) {
+   for (var i = 0; i < song.artists.length; i++) {
+      artists.push(`${i === 0 ? '' : i+1 === song.artists.length ? ' and ' : ', '}${song.artists[i].name}`);
+   }
 }
 ---
 <!DOCTYPE html>
 	<html lang="en" style="width: 100%; height: 100%;">
+      {isError ? 
+      <head>
+         <title>Error</title>
+         <meta property="og:title" content="Error" />
+         <meta property="og:site_name" content="FxSpotify" />
+         <meta property="twitter:card" content="player" />
+         <meta property="theme-color" content="#1ed760" />
+         <meta property="description" content="Oops! This song doesn't exist or is not available." />
+         <meta property="og:description" content="Oops! This song doesn't exist or is not available." />
+         <meta property="twitter:site" content="spotify" />
+         <meta property="twitter:title" content="Error" />
+      </head> :
    	<head>
          <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
          <meta http-equiv="refresh" content={`${isBot ? '2' : '0'};url=${song.external_urls.spotify}`}>
@@ -44,6 +59,7 @@ for (var i = 0; i < song.artists.length; i++) {
          <meta property="twitter:site" content="spotify" />
          <meta property="twitter:title" content={song.name} />
          <meta property="twitter:url" content="https://open.spotify.com/track/${slug}?utm_source=fxspotify" />
+         }
       </head>
       <body style="display: flex; width: 100%; height: 100%; margin: 0; font-family: sans-serif"></body>
 </html>
