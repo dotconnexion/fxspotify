@@ -28,7 +28,7 @@ async def oembed():
         return jsonify({"error": "Track not found"}), 404
     
     artists = [a['name'] for a in track_info['artists']]
-    artists_str = ', '.join(artists[:-1] + [' and ' + artists[-1]] if len(artists) > 1 else artists)
+    artists_str = ', '.join(artists)
     author_url = f"https://open.spotify.com/artist/{track_info['artists'][0]['uri'].split(':')[-1]}" if track_info['artists'] else ""
     
     oembed_data = {

@@ -12,7 +12,7 @@ async def track_page(intl_part, track_id):
     
     preview_url = track_info.get('audio_preview_url')
     artists = [artist['name'] for artist in track_info['artists']]
-    artists_str = ', '.join(artists[:-1] + [' and ' + artists[-1]] if len(artists) > 1 else artists)
+    artists_str = ', '.join(artists)
     description = f"Song · {artists_str}" if preview_url else "Preview not available."
     
     return await render_template(
